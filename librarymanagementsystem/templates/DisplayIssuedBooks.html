@@ -1,0 +1,24 @@
+{% extends 'admin_navbar.html' %}
+{% block content %}
+<h2> Display Issued Books Details</h2>
+<table class="table">
+  <tr>
+    <th>Student Name</th>
+    <th>Book Name</th>
+    <th> Start Date</th>
+    <th> End Date</th>
+    <th> Update</th>
+    <th> Delete</th>
+  </tr>
+  {% for i in bk %}
+  <tr>
+    <td>{{ i.studname }}</td>
+    <td>{{ i.bookname }}</td>
+    <td>{{ i.startdate }}</td>
+    <td>{{ i.enddate }}</td>
+    <td><a href="{% url 'upbk' i.id %}">Update</a></td>
+    <td><a href="{% url 'delbk' i.id %}">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+<h2 align="center">Admin registration</h2>
+<h3 align="center" style="color:red">{{data}}</h3>
+<form action="adminreg" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>name:</td>
+            <td><input type="text" name="tname"></td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td><input type="email" name="temail"></td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td><input type="password" name="tpass"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle"><input type="submit" class="sub" value="register"></td>
+        </tr>
+    </table>
+</form>
+</body>
+<style>
+    body{
+            background-color:yellow;
+            }
+    table{
+            padding:30px;
+            border:2px solid #252525;
+            border-radius:8px;
+            }
+    td{padding:3px;}
+    input{
+            height:20px;
+            background-color:#bfbfbf;
+            border-radius:8px;
+            border:2px solid #252525;
+            }
+    .sub{
+            background-color:#252525;
+            color:#bfbfbf;
+            width:35%;
+            }
+</style>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'admin_navbar.html' %}
+{% block content %}
+<h3 align="center" style="color:green">{{msg}}</h3>
+<div style="float:left;  padding:10px; width:45%; margin: 10px" >
+  <form method="post" action="readsemcourse">
+      {% csrf_token %}
+    <table align="center" class="table">
+        <tr>
+            <td>Student Sem</td>
+            <td><input type="text" name="txtsem"></td>
+        </tr>
+        <tr>
+            <td>Student Course</td>
+            <td><select name="ddlcourse">
+                {% for i in Course_Data %}
+                <option>{{ i.cname }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+  </form>
+</div>
+<div style="float:right;  padding:10px; width:45%; margin: 10px">
+  <form method="post" action="readstdbook">
+      {% csrf_token %}
+      <table align="center" class="table">
+        <tr>
+            <td>Student Name</td>
+            <td><select name="ddlStdname">
+                {% for i in Student_Data %}
+                <option>
+                    {{ i.sname }}
+                </option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td>Book Name</td>
+            <td><select name="ddlBookname">
+                {% for i in Book_Data %}
+                <option>{{ i.bname }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+          <tr>
+              <td>Start Date</td>
+              <td><input type="date" name="startdate"></td>
+          </tr>
+          <tr>
+              <td>Start Date</td>
+              <td><input type="date" name="enddate"></td>
+          </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+  </form>
+</div>
+
+{% endblock%}

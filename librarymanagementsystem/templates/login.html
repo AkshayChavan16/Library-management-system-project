@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+</head>
+<body>
+<hr>
+<h2 align="center">LOGIN PAGE</h2>
+<hr>
+<h3 align="center" style="color:red">{{data}}</h3>
+<form action="checkdata" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td >User Name:</td>
+            <td><input type="text" name="tName"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="tpass"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle"><input type="submit" value="login" class="sub"></td>
+        </tr>
+        <tr>
+            <td align="middle" colspan="2"><a href="{% url 'studsignup' %}">student signup</a></td>
+        </tr>
+        <tr>
+            <td align="middle" colspan="2"><a href="{% url 'adminsignup' %}">admin signup</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+<style>
+    body{
+            background-color:yellow;
+            }
+    table{
+            padding:30px;
+            border:2px solid white;
+            border-radius:8px;
+            }
+
+</style>
+</html>
